@@ -1,0 +1,20 @@
+Install python
+
+Open powershell
+navigate to your python file
+type "pip install -U selenium"
+
+restart powershell
+in python directory type list
+if correct, selenium should show up in said list
+
+Selenium should now be activated
+
+Download pycharm, use pycharm to open the project
+
+Make sure your version of google chrome is Version 88.0.4324.190
+as that is the driver version used in this project
+To find out go to:
+Chrome->
+Help->
+about google chrome
