@@ -7,7 +7,15 @@ from selenium.webdriver.common.by import By
 email = input("what is your email?")
 password = input("what is your password")
 #Calls the chrome driver
-driver = webdriver.Chrome(executable_path="Resources/chromedriver.exe")
+#Calls the chrome driver
+driveRequest = input("What is your OS, windows, linux or mac?(w/l/m)")
+if (driveRequest == "w"):
+    driver = webdriver.Chrome(executable_path="Resources/chromedriver.exe")
+elif (driveRequest == "l"):
+    driver = webdriver.Chrome(executable_path="Resources/chromedriverlinux")
+elif(driveRequest == "m"):
+    driver = webdriver.Chrome(executable_path="Resources/chromedrivermac")
+
 # Takes you to the website
 driver.get("https://mapmanager.steps.me")
 
