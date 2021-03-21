@@ -7,7 +7,7 @@ import platform
 
 platString = (str(platform.platform()))
 
-
+#if this is your first time, run DriverInstaller first
 
 #Checks if either the chromedriver or chromedriver.exe files exist in your files
 
