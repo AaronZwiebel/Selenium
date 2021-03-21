@@ -1,16 +1,9 @@
 import os.path
-from selenium import webdriver
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 import platform
 import requests
 import zipfile
 
 platString = (str(platform.platform()))
-
-
 
 #Checks if either the chromedriver or chromedriver.exe files exist in your files
 if ((os.path.exists("Resources/chromedriver.exe")) == False) or ((os.path.exists("Resources/chromedriver")) == False):
