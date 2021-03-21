@@ -1,39 +1,24 @@
-import os.path
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import platform
-import requests
-import zipfile
 
 platString = (str(platform.platform()))
 
-#Checks if either the chromedriver or chromedriver.exe files exist in your recourses folder, if not downloads them
-if ((os.path.exists("Resources/chromedriver.exe")) ==False) or ((os.path.exists("Resources/chromedriver")) ==False):
-    if "Window" in platString:
-        url = ("https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_win32.zip")
-    elif "Linux" in platString:
-        url = ("https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_linux64.zip")
-    elif "Mac" in platString:
-        url = ("https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_mac64.zip")
 
-        target_path = 'DesignatedDriver.zip'
-        response = requests.get(url, stream=True)
-        handle = open(target_path, "wb")
-        for chunk in response.iter_content(chunk_size=512):
-            if chunk:  # filter out keep-alive new chunks
-                handle.write(chunk)
-        handle.close()
-        with zipfile.ZipFile("DesignatedDriver.zip","r") as zip_ref:
-            zip_ref.extractall("Resources")
+
+#Checks if either the chromedriver or chromedriver.exe files exist in your files
 
 
 if "Window" in platString:
     driver = webdriver.Chrome(executable_path="Resources/chromedriver.exe")
 else:
     driver = webdriver.Chrome(executable_path="Resources/chromedriver")
+
+
+
 
 # Takes you to the website
 driver.get("http://saucedemo.com/")
