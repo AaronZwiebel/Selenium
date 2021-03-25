@@ -13,16 +13,6 @@ if ((os.path.exists("Resources/chromedriver.exe")) == False) or ((os.path.exists
             url = ("https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_linux64.zip")
         elif "Mac" in platString:
             url = ("https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_mac64.zip")
-
-            if ((os.path.exists("Resources/chromedriver.exe")) == False) or (
-                    (os.path.exists("Resources/chromedriver")) == False):
-                if "Window" in platString:
-                    url = ("https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_win32.zip")
-                elif "Linux" in platString:
-                    url = ("https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_linux64.zip")
-                elif "Mac" in platString:
-                    url = ("https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_mac64.zip")
-
 target_path = 'DesignatedDriver.zip'
 response = requests.get(url, stream=True)
 handle = open(target_path, "wb")
