@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import platform
 
+
 platString = (str(platform.platform()))
 
 #if this is your first time, run DriverInstaller first
@@ -16,7 +17,6 @@ if "Window" in platString:
     driver = webdriver.Chrome(executable_path="Resources/chromedriver.exe")
 else:
     driver = webdriver.Chrome(executable_path="Resources/chromedriver")
-
 
 
 
